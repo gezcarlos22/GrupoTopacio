@@ -136,7 +136,7 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:hint="Usuario"
+                            android:hint="Contraseña"
                             android:inputType="text"
                             android:padding="10dp"
                             android:textColor="@color/black"

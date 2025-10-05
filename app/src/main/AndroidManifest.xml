@@ -55,6 +55,8 @@
         <activity android:name=".VerVencimientosActivity" />
 
         <activity android:name=".EmitirCarnetActivity" />
+
+        <activity android:name=".EmitirCarnetValidoActivity" />
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.example.grupotopacio
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
@@ -21,5 +22,11 @@ class EmitirCarnetActivity : AppCompatActivity() {
 
         val btnVolver = findViewById<Button>(R.id.btnVolverAtras)
         btnVolver.setOnClickListener { finish() }
+
+        val btnGenerar = findViewById<Button>(R.id.btnGenerarCarnet)
+        btnGenerar.setOnClickListener {
+            val intent = Intent(this, EmitirCarnetValidoActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

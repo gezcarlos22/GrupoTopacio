@@ -1,11 +1,20 @@
 package com.example.grupotopacio
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
 class EmitirCarnetValidoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_emitir_carnet_valido)
+
+        val btnVolver = findViewById<Button>(R.id.btnVolverAtras)
+
+        btnVolver.setOnClickListener {
+            val intent = Intent(this, EmitirCarnetActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

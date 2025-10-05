@@ -1,6 +1,8 @@
 package com.example.grupotopacio
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +18,12 @@ class RegistrarSocioActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val btnVolverAtras = findViewById<LinearLayout>(R.id.btnVolverAtras)
+
+        btnVolverAtras.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+
     }
 }

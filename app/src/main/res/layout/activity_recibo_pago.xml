@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EFEFEF"
+    tools:context=".ReciboPagoActivity">
+
+    <!-- Encabezado Fijo -->
+    <LinearLayout
+        android:id="@+id/header_recibo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnVolverAtrasRecibo"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Volver atrás"
+            android:padding="8dp"
+            android:src="@android:drawable/ic_menu_revert"
+            app:tint="#6750A3" /> <!-- Púrpura para el icono de retorno -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RECIBO DE PAGO"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Contenido Scrollable -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/header_recibo_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Tarjeta de Contenido Principal (Usando CardView para elevación y esquinas) -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- FECHA -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FECHA:"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/inputFecha"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Input"
+                        android:inputType="text"
+                        android:paddingHorizontal="12dp"
+                        android:background="@drawable/edittext_fondo_claro"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- RECIBO DE -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RECIBO DE:"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/inputReciboDe"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Input"
+                        android:inputType="text"
+                        android:paddingHorizontal="12dp"
+                        android:background="@drawable/edittext_fondo_claro"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- DNI -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DNI:"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/inputDNI"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Input"
+                        android:inputType="number"
+                        android:paddingHorizontal="12dp"
+                        android:background="@drawable/edittext_fondo_claro"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- MEDIO DE PAGO -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MEDIO DE PAGO:"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/inputMedioPago"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Input"
+                        android:inputType="text"
+                        android:paddingHorizontal="12dp"
+                        android:background="@drawable/edittext_fondo_claro"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- FORMA DE PAGO -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FORMA DE PAGO:"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/inputFormaPago"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Input"
+                        android:inputType="text"
+                        android:paddingHorizontal="12dp"
+                        android:background="@drawable/edittext_fondo_claro"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- CONCEPTO -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CONCEPTO:"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/inputConcepto"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Input"
+                        android:inputType="text"
+                        android:paddingHorizontal="12dp"
+                        android:background="@drawable/edittext_fondo_claro"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- RECIBIDO POR -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RECIBIDO POR:"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/inputRecibidoPor"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Input"
+                        android:inputType="text"
+                        android:paddingHorizontal="12dp"
+                        android:background="@drawable/edittext_fondo_claro"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- ROL -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ROL:"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/inputRol"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Input"
+                        android:inputType="text"
+                        android:paddingHorizontal="12dp"
+                        android:background="@drawable/edittext_fondo_claro"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- TOTAL (Resaltado) -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TOTAL:"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/inputTotal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:hint="Input"
+                        android:inputType="numberDecimal"
+                        android:paddingHorizontal="12dp"
+                        android:background="#F7E9F9"
+                        android:textColor="#6750A3"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="24dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Botón IMPRIMIR -->
+            <Button
+                android:id="@+id/btnImprimirRecibo"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="IMPRIMIR"
+                android:textSize="20sp"
+                android:backgroundTint="#6750A3"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="16dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/rounded_white_background"
+    android:gravity="center_horizontal">
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/check"
+        android:contentDescription="Icono de confirmación"
+        android:layout_marginBottom="16dp"
+        app:tint="@color/purple" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Se imprimió el recibo de pago correctamente"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginBottom="30dp"/>
+
+    <Button
+        android:id="@+id/btnVolverMenuPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="VOLVER AL MENÚ PRINCIPAL"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:background="@drawable/buttonpurple_fondo"
+        app:backgroundTint="@null"/>
+
+</LinearLayout>

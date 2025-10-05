@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GrupoTopacio">
         <activity
+            android:name=".ReciboPagoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrarPagoFinalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SeleccionarCuotaActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegistrarPagoActivity"
             android:exported="false" />
         <activity

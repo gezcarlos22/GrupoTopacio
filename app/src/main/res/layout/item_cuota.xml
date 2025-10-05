@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingVertical="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?attr/selectableItemBackground"> <TextView
+    android:id="@+id/text_datos_cuota"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="18sp"
+    android:textColor="@color/black"
+    android:textStyle="bold"
+    android:paddingHorizontal="4dp"
+    android:ellipsize="end"
+    android:maxLines="1"
+    android:text="Cuota N° 1 - Vencimiento: 20/05/2025 - Monto: $1500"
+    />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="#DDDDDD"
+        />
+
+</LinearLayout>

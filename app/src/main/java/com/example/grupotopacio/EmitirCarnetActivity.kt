@@ -21,7 +21,10 @@ class EmitirCarnetActivity : AppCompatActivity() {
         }
 
         val btnVolver = findViewById<Button>(R.id.btnVolverAtras)
-        btnVolver.setOnClickListener { finish() }
+        btnVolver.setOnClickListener {
+            val intent = Intent(this, MenuPrincipalActivity::class.java)
+            startActivity(intent)
+        }
 
         val btnGenerar = findViewById<Button>(R.id.btnGenerarCarnet)
         btnGenerar.setOnClickListener {

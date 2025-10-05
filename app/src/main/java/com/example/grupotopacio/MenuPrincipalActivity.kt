@@ -41,5 +41,19 @@ class MenuPrincipalActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+        val btnVerVencimiento = findViewById<LinearLayout>(R.id.btnVerVencimiento)
+
+        btnVerVencimiento.setOnClickListener {
+            val intent = Intent(this, VerVencimientosActivity::class.java)
+            startActivity(intent)
+        }
+
+        val btnEmitirCarnet = findViewById<LinearLayout>(R.id.btnEmitirCarnet)
+
+        btnEmitirCarnet.setOnClickListener {
+            val intent = Intent(this, EmitirCarnetActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

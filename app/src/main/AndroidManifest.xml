@@ -12,6 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GrupoTopacio">
         <activity
+            android:name=".RegistrarPagoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity_registrar_pago"
+            android:exported="false"
+            android:label="@string/title_activity_registrar_pago"
+            android:theme="@style/Theme.GrupoTopacio" />
+        <activity
+            android:name=".activiry_registrar_pago"
+            android:exported="false"
+            android:label="@string/title_activity_activiry_registrar_pago"
+            android:theme="@style/Theme.GrupoTopacio" />
+        <activity
             android:name=".RegistrarSocioActivity"
             android:exported="false" />
         <activity

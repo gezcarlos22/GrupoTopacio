@@ -1,26 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/backgraund2"
-    android:paddingVertical="50dp"
-    android:paddingHorizontal="20dp"
+
+    android:paddingTop="50dp"
+    android:paddingBottom="20dp"
+
     tools:context=".MenuPrincipalActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/header_bienvenida"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:layout_marginBottom="50dp">
+
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="30dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="BIENVENIDO"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -31,134 +41,163 @@
             android:layout_height="80dp"
             android:scaleType="centerCrop"
             android:src="@drawable/user"
-            android:layout_marginLeft="120dp"
-            />
 
+            />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/btnRegistroCliente"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="100dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/button_home"
-        android:paddingHorizontal="20dp"
-        android:gravity="center_vertical"
         android:clickable="true"
         android:focusable="true"
-        android:layout_marginBottom="40dp">
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+
+        android:layout_marginHorizontal="20dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/btnRegistroPago"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_bienvenida">
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:layout_marginEnd="40dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/registro"
-            android:layout_marginRight="40dp"
-            />
+            android:src="@drawable/registro" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="REGISTRAR CLIENTE"
+            android:textColor="@color/black"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/black" />
-
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/btnRegistroPago"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/button_home"
-        android:paddingHorizontal="20dp"
-        android:gravity="center_vertical"
         android:clickable="true"
         android:focusable="true"
-        android:layout_marginBottom="40dp">
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+
+        android:layout_marginHorizontal="20dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/btnVerVencimiento"
+        app:layout_constraintTop_toBottomOf="@id/btnRegistroCliente"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:layout_marginEnd="40dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/dollar"
-            android:layout_marginRight="40dp"
-            />
+            android:src="@drawable/dollar" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="REGISTRAR PAGO"
+            android:textColor="@color/black"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/black" />
-
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/btnVerVencimiento"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
         android:background="@drawable/button_home"
-        android:paddingHorizontal="20dp"
-        android:gravity="center_vertical"
         android:clickable="true"
         android:focusable="true"
-        android:layout_marginBottom="40dp">
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+
+        android:layout_marginHorizontal="20dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/btnEmitirCarnet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegistroPago">
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:layout_marginEnd="40dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/reloj"
-            android:layout_marginRight="40dp"
-            />
+            android:src="@drawable/reloj" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="VER VENCIMIENTOS"
+            android:textColor="@color/black"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/black" />
-
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/btnEmitirCarnet"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="64dp"
         android:background="@drawable/button_home"
-        android:paddingHorizontal="20dp"
-        android:gravity="center_vertical"
         android:clickable="true"
         android:focusable="true"
-        android:layout_marginBottom="50dp">
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+
+        android:layout_marginHorizontal="20dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/btnCerrarSeccion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVerVencimiento">
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:layout_marginEnd="40dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/carnet"
-            android:layout_marginRight="40dp"
-            />
+            android:src="@drawable/carnet" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="EMITIR CARNET"
+            android:textColor="@color/black"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/black" />
-
+            android:textStyle="bold" />
     </LinearLayout>
 
     <Button
         android:id="@+id/btnCerrarSeccion"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="60dp"
-        android:text="Cerrar Seccion"
-        android:textSize="20sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/buttonpurple_fondo"
-        />
+        android:text="Cerrar Sesion"
 
-</LinearLayout>
+        android:textSize="20sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

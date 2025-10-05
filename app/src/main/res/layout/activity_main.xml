@@ -14,7 +14,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/Backgraund"
+            android:src="@drawable/backgraund"
             android:scaleType="centerCrop"
             />
         <ImageButton
@@ -22,7 +22,7 @@
             android:layout_width="300dp"
             android:layout_height="300dp"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/logoCD"
+            app:srcCompat="@drawable/logo_cd"
             android:background="@color/trasparent"
             android:layout_gravity="center"/>
     </FrameLayout>

@@ -1,18 +1,18 @@
 package com.example.grupotopacio
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.LinearLayout
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MenuPrincipalActivity : AppCompatActivity() {
+class RegistrarPagoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_menu_principal)
+        setContentView(R.layout.activity_registrar_pago)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -20,17 +20,16 @@ class MenuPrincipalActivity : AppCompatActivity() {
             insets
         }
 
-        val btnRegistroPago = findViewById<LinearLayout>(R.id.btnRegistroPago)
-        val btnRegistroCliente = findViewById<LinearLayout>(R.id.btnRegistroCliente)
+        val tiposDeCobro = resources.getStringArray(R.array.tipo_cobro_opciones)
 
-        btnRegistroPago.setOnClickListener {
-            val intent = Intent(this, RegistrarPagoActivity::class.java)
-            startActivity(intent)
-        }
+        val adapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_dropdown_item,
+            tiposDeCobro
+        )
 
-        btnRegistroCliente.setOnClickListener {
-            val intent = Intent(this, RegistrarSocioActivity::class.java)
-            startActivity(intent)
-        }
+        val autoCompleteTextView = findViewById<AutoCompleteTextView>(R.id.text_seleccionar_cliente)
+
+        autoCompleteTextView.setAdapter(adapter)
     }
 }

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GrupoTopacio</string>
+    <string name="title_activity_activiry_registrar_pago">activiry_registrar_pago</string>
+    <string name="title_activity_registrar_pago">activity_registrar_pago</string>
 </resources>

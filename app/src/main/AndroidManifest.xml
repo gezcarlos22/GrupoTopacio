@@ -51,6 +51,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".VerVencimientosActivity" />
+
+        <activity android:name=".EmitirCarnetActivity" />
+
+        <activity android:name=".EmitirCarnetValidoActivity" />
     </application>
 
 </manifest>

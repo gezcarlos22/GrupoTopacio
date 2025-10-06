@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.widget.Button
+import android.widget.LinearLayout
 
 class VerVencimientosActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +20,10 @@ class VerVencimientosActivity: AppCompatActivity() {
             insets
         }
 
-        val btnVolver = findViewById<Button>(R.id.btnVolverAtras)
-        btnVolver.setOnClickListener { finish() }
+        val btnVolverAtras = findViewById<LinearLayout>(R.id.btnVolverAtras)
+
+        btnVolverAtras.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
     }
 }

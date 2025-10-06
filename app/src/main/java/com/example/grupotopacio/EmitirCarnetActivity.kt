@@ -3,6 +3,7 @@ package com.example.grupotopacio
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,10 +21,10 @@ class EmitirCarnetActivity : AppCompatActivity() {
             insets
         }
 
-        val btnVolver = findViewById<Button>(R.id.btnVolverAtras)
-        btnVolver.setOnClickListener {
-            val intent = Intent(this, MenuPrincipalActivity::class.java)
-            startActivity(intent)
+        val btnVolverAtras = findViewById<LinearLayout>(R.id.btnVolverAtras)
+
+        btnVolverAtras.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
         }
 
         val btnGenerar = findViewById<Button>(R.id.btnGenerarCarnet)

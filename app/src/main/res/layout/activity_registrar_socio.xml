@@ -295,7 +295,7 @@
         android:id="@+id/btnContinuar"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:text="CONTINUAR"
+        android:text="REGISTRAR"
         android:textSize="20sp"
         android:background="@drawable/buttonpurple_fondo"
         android:layout_marginBottom="30dp"

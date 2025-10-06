@@ -3,6 +3,7 @@ package com.example.grupotopacio
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,9 +21,10 @@ class ReciboPagoActivity : AppCompatActivity() {
             insets
         }
 
-        val btnVolverAtras = findViewById<ImageButton>(R.id.btnVolverAtrasRecibo)
+        val btnVolverAtras = findViewById<LinearLayout>(R.id.btnVolverAtras)
+
         btnVolverAtras.setOnClickListener {
-            finish()
+            onBackPressedDispatcher.onBackPressed()
         }
 
         val btnImprimir = findViewById<Button>(R.id.btnImprimirRecibo)

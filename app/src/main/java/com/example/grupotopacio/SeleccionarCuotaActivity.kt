@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 
 import android.widget.Button
+import android.widget.LinearLayout
 
 import androidx.activity.enableEdgeToEdge
 
@@ -34,6 +35,12 @@ class SeleccionarCuotaActivity : AppCompatActivity() {
 
             insets
 
+        }
+
+        val btnVolverAtras = findViewById<LinearLayout>(R.id.btnVolverAtras)
+
+        btnVolverAtras.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
         }
 
 

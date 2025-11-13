@@ -56,6 +56,7 @@
 
     <!-- Contenido Scrollable -->
     <ScrollView
+        android:id="@+id/scroll_view_recibo"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/header_recibo_layout"

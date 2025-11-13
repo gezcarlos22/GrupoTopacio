@@ -6,10 +6,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import android.view.ViewGroup.LayoutParams
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 class ConfirmacionCuotaDialogFragment : DialogFragment() {
+
+    private var cuotaId: Long = -1
+    private lateinit var dbHelper: ClubDatabaseHelper
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        dbHelper = ClubDatabaseHelper(requireContext())
+        cuotaId = arguments?.getLong("CUOTA_ID") ?: -1
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,6 +39,13 @@ class ConfirmacionCuotaDialogFragment : DialogFragment() {
         )
     }
 
+
+    private fun getTodayDateString(): String {
+        val calendar = Calendar.getInstance()
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        return dateFormat.format(calendar.time)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -38,9 +57,34 @@ class ConfirmacionCuotaDialogFragment : DialogFragment() {
         }
 
         btnAceptar.setOnClickListener {
+            if (cuotaId == -1L) {
+                Toast.makeText(context, "Error al procesar el pago.", Toast.LENGTH_SHORT).show()
+                dismiss()
+                return@setOnClickListener
+            }
+
+            dbHelper.marcarCuotaPagada(cuotaId)
+
+            val cursor = dbHelper.getDatosRecibo(cuotaId)
+            if (cursor.moveToFirst()) {
+                val nombre = cursor.getString(cursor.getColumnIndexOrThrow("nombre"))
+                val apellido = cursor.getString(cursor.getColumnIndexOrThrow("apellido"))
+                val dni = cursor.getString(cursor.getColumnIndexOrThrow("dni"))
+                val monto = cursor.getDouble(cursor.getColumnIndexOrThrow("monto"))
+
+                val intent = Intent(activity, ReciboPagoActivity::class.java)
+
+
+                intent.putExtra("FECHA", getTodayDateString())
+                intent.putExtra("RECIBO_DE", "$nombre $apellido")
+                intent.putExtra("DNI", dni)
+                intent.putExtra("CONCEPTO", "Pago de cuota mensual")
+                intent.putExtra("TOTAL", monto.toString())
+
+                startActivity(intent)
+            }
+            cursor.close()
             dismiss()
-            val intent = Intent(activity, ReciboPagoActivity::class.java)
-            startActivity(intent)
         }
     }
 }

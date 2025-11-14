@@ -4,4 +4,11 @@
         <item>Tarjeta</item>
         <item>Efectivo</item>
     </string-array>
+
+    <string-array name="forma_pago_opciones">
+        <item>Unico</item>
+        <item>3 Cuotas</item>
+        <item>6 Cuotas</item>
+    </string-array>
 </resources>
+

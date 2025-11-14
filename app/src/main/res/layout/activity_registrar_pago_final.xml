@@ -52,6 +52,12 @@
                         android:layout_marginEnd="40dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/arrow_back" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:text="Volver atrás"
+                        android:importantForAccessibility="yes"
+                        tools:ignore="SmallSp" />
 
                 </LinearLayout>
 
@@ -122,18 +128,21 @@
                     android:layout_marginBottom="30dp"
                     app:boxBackgroundColor="#6750A3"
                     app:hintTextColor="#FFFFFF"
-                    app:placeholderTextColor="#FFFFFF"       app:boxStrokeColor="#FFFFFF"             app:boxStrokeWidth="0dp">               <AutoCompleteTextView
-                    android:id="@+id/text_forma_cobro"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="FORMA DE COBRO"
-                    android:inputType="none"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:gravity="center"
-                    />
+                    app:placeholderTextColor="#FFFFFF"
+                    app:boxStrokeColor="#FFFFFF"
+                    app:boxStrokeWidth="0dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/text_forma_cobro"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="FORMA DE COBRO"
+                        android:inputType="none"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#FFFFFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
@@ -153,7 +162,8 @@
                     android:inputType="numberDecimal"
                     android:paddingHorizontal="12dp"
                     android:background="@drawable/edittext_fondo_claro"
-                    android:layout_marginBottom="30dp"/>
+                    android:layout_marginBottom="30dp"
+                    android:enabled="false"/>
 
                 <TextView
                     android:layout_width="wrap_content"

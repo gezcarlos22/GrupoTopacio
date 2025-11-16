@@ -59,6 +59,11 @@ class ReciboPagoActivity : AppCompatActivity() {
         findViewById<EditText>(R.id.inputConcepto).setText(datosRecibo?.getString("CONCEPTO"))
         findViewById<EditText>(R.id.inputTotal).setText("$$${datosRecibo?.getString("TOTAL")}")
 
+        findViewById<EditText>(R.id.inputMedioPago).setText(datosRecibo?.getString("TIPO_PAGO"))
+        findViewById<EditText>(R.id.inputFormaPago).setText(datosRecibo?.getString("TIPO_PAGO"))
+        findViewById<EditText>(R.id.inputRecibidoPor).setText(datosRecibo?.getString("FIRMA_ADMIN"))
+        findViewById<EditText>(R.id.inputRol).setText("Administración")
+
 
         val btnImprimir = findViewById<Button>(R.id.btnImprimirRecibo)
         btnImprimir.setOnClickListener {

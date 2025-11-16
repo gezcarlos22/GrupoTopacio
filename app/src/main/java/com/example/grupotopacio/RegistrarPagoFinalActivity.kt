@@ -21,6 +21,7 @@ class RegistrarPagoFinalActivity : AppCompatActivity() {
     private lateinit var dbHelper: ClubDatabaseHelper
     private lateinit var editMontoFinal: EditText
     private lateinit var radioGroupCobro: RadioGroup
+    private lateinit var editFirmaAdministrador: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +31,7 @@ class RegistrarPagoFinalActivity : AppCompatActivity() {
         dbHelper = ClubDatabaseHelper(this)
         editMontoFinal = findViewById(R.id.edit_monto_final)
         radioGroupCobro = findViewById(R.id.radio_group_cobro)
+        editFirmaAdministrador = findViewById(R.id.edit_firma_administrador)
 
         cuotaId = intent.getLongExtra("CUOTA_ID", -1)
         if (cuotaId == -1L) {
@@ -91,11 +93,14 @@ class RegistrarPagoFinalActivity : AppCompatActivity() {
     }
 
     private fun mostrarConfirmacionTransaccion() {
+        val firmaAdministrador = editFirmaAdministrador.text.toString()
+
         val dialog = ConfirmacionCuotaDialogFragment().apply {
             arguments = Bundle().apply {
                 putLong("CUOTA_ID", cuotaId)
                 putDouble("MONTO_FINAL", montoFinal)
                 putString("TIPO_PAGO", tipoPagoSeleccionado)
+                putString("FIRMA_ADMIN", firmaAdministrador)
             }
         }
         dialog.show(supportFragmentManager, "confirmacion_transaccion_dialog")

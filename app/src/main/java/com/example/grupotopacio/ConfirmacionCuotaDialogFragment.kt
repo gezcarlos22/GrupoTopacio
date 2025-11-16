@@ -16,11 +16,18 @@ class ConfirmacionCuotaDialogFragment : DialogFragment() {
 
     private var cuotaId: Long = -1
     private lateinit var dbHelper: ClubDatabaseHelper
+    private var tipoPago: String = ""
+    private var firmaAdmin: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         dbHelper = ClubDatabaseHelper(requireContext())
-        cuotaId = arguments?.getLong("CUOTA_ID") ?: -1
+        
+        arguments?.let {
+            cuotaId = it.getLong("CUOTA_ID", -1)
+            tipoPago = it.getString("TIPO_PAGO", "EFECTIVO") ?: "EFECTIVO"
+            firmaAdmin = it.getString("FIRMA_ADMIN", "") ?: ""
+        }
     }
 
     override fun onCreateView(
@@ -80,6 +87,8 @@ class ConfirmacionCuotaDialogFragment : DialogFragment() {
                 intent.putExtra("DNI", dni)
                 intent.putExtra("CONCEPTO", "Pago de cuota mensual")
                 intent.putExtra("TOTAL", monto.toString())
+                intent.putExtra("TIPO_PAGO", tipoPago)
+                intent.putExtra("FIRMA_ADMIN", firmaAdmin)
 
                 startActivity(intent)
             }
